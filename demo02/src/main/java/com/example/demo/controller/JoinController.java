@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class JoinController {
 	private JoinService joinService;
 
 	@PostMapping("join")
-	public void join(@RequestParam Map<String, Object> map, HttpServletRequest request) {
+	public Map join(@RequestParam Map<String, Object> map, HttpServletRequest request) {
 
 //		ip
 		ClientUtils clientUtils = new ClientUtils();
@@ -67,22 +68,29 @@ public class JoinController {
 		dto.setMarketing_flag(marketing_flag);
 		dto.setMem_status(mem_status);
 
-		System.out.println(dto.getMem_id());
-		System.out.println(dto.getMem_pw());
-		System.out.println(dto.getReg_date());
-		System.out.println(dto.getReg_time());
-		System.out.println(dto.getReg_ip());
-		System.out.println(dto.getMem_email());
-		System.out.println(dto.getMarketing_flag());
-		System.out.println(dto.getMem_status());
+		/*
+		 * System.out.println(dto.getMem_id()); System.out.println(dto.getMem_pw());
+		 * System.out.println(dto.getReg_date()); System.out.println(dto.getReg_time());
+		 * System.out.println(dto.getReg_ip()); System.out.println(dto.getMem_email());
+		 * System.out.println(dto.getMarketing_flag());
+		 * System.out.println(dto.getMem_status());
+		 */
 
+		String result = "";
+		
 		try {
 			joinService.join(dto);
 			System.out.println("회원가입 성공");
+			result = "success";
 		} catch (Exception e) {
 			System.out.println("회원가입 실패");
-			e.printStackTrace();
+			result = "fail";
 		}
+		
+		Map<String, Object> join_result = new HashMap<String, Object>();
+		join_result.put("result", result);
+		
+		return join_result;
 
 	}
 

@@ -24,19 +24,25 @@ public class SearchController {
 //	public String search(@RequestParam Map<String, Object> map, Model model) {
 	public ArrayList<MarketDTO> search(@RequestParam Map<String, Object> map, Model model) {
 
-		String word = (String) map.get("word");
+		String word = map.get("word") != null ? (String) map.get("word") : "";
 		System.out.println(word + "검색");
-		
-		ArrayList<MarketDTO> searchList = null;
 
-		try {
-			searchList = searchService.searchList(word);
-			System.out.println("검색 성공");
-			model.addAttribute("searchList", searchList);
+		ArrayList<MarketDTO> searchList = new ArrayList<>();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("실패");
+		MarketDTO dto = new MarketDTO("fail");
+
+		if (word.length() >= 2) {
+
+			try {
+
+				searchList = searchService.searchList(word);
+				System.out.println("검색 성공");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("실패");
+				searchList.add(dto);
+			}
 		}
 
 		return searchList;

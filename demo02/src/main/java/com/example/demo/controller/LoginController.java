@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class LoginController {
 	private LogNumService logNumService;
 
 	@PostMapping("login")
-	public void login(@RequestParam Map<String, Object> map, HttpSession session, HttpServletRequest request) {
+	public Map login(@RequestParam Map<String, Object> map, HttpSession session, HttpServletRequest request) {
 
 		System.out.println("로그인 컨트롤러");
 		System.out.println(map.get("mem_id"));
@@ -53,14 +54,18 @@ public class LoginController {
 		map.put("mem_pw", mem_pw);
 		System.out.println(mem_pw);
 
+		String result = "";
+		
+
 		try {
 			System.out.println("로그인 시도");
 			MemberDTO dto = loginService.login(map);
 			session.setAttribute("user", dto);
 			System.out.println("로그인 성공");
+			result = "success";
 		} catch (Exception e) {
 			System.out.println("로그인 실패");
-			e.printStackTrace();
+			result = "fail";
 		}
 
 		ClientUtils clientUtils = new ClientUtils();
@@ -86,6 +91,12 @@ public class LoginController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		Map<String, Object> login_result = new HashMap<String, Object>();
+		
+		login_result.put("result", result);
+
+		return login_result;
 
 	}
 

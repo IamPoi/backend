@@ -6,8 +6,10 @@
 <mapper namespace="com.example.demo.mapper.AutoCompleteMapper">
 	<select id="autoComplete" resultType="com.example.demo.model.MarketDTO" parameterType="String">
 		select
-		 
+		
 		market_name,
+		market_location_a,
+		market_location_b,
 		geo_info
 		
 		from market_data.market_info 
@@ -22,11 +24,13 @@
 	
 </mapper>
 
-	<!-- private String market_name;
+	<!-- 
+	private String market_name;
 	private String market_location_a;
-	private String market_locatiiono_b;
+	private String market_location_b;
 	private float market_latitude;
 	private float market_longitude;
 	private String market_type;
 	private String market_item;
-	private String geo_info; -->
+	private String geo_info;
+	 -->

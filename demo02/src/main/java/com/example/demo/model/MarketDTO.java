@@ -27,12 +27,12 @@ public class MarketDTO {
 		this.market_location_a = market_location_a;
 	}
 
-	public String market_location_b() {
+	public String getMarket_location_b() {
 		return market_location_b;
 	}
 
-	public void market_location_b(String market_locatiiono_b) {
-		this.market_location_b = market_locatiiono_b;
+	public void setMarket_location_b(String market_location_b) {
+		this.market_location_b = market_location_b;
 	}
 
 	public float getMarket_latitude() {
@@ -88,13 +88,25 @@ public class MarketDTO {
 		this.geo_info = geo_info;
 	}
 
-	
-	public MarketDTO(String market_name, String geo_info) {
+	public MarketDTO(String market_name, String market_location_a, String market_location_b, String geo_info) {
 		super();
 		this.market_name = market_name;
+		this.market_location_a = market_location_a;
+		this.market_location_b = market_location_b;
 		this.geo_info = geo_info;
 	}
-	
-	
+
+	public MarketDTO(String market_name) {
+		super();
+		this.market_name = market_name;
+	}
+
+	@Override
+	public String toString() {
+		return "MarketDTO [market_name=" + market_name + ", market_location_a=" + market_location_a
+				+ ", market_location_b=" + market_location_b + ", market_latitude=" + market_latitude
+				+ ", market_longitude=" + market_longitude + ", market_type=" + market_type + ", market_item="
+				+ market_item + ", geo_info=" + geo_info + "]";
+	}
 
 }

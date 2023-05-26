@@ -24,17 +24,26 @@ public class AutoCompleteController {
 	@GetMapping("autoComplete")
 	public ArrayList<MarketDTO> search(@RequestParam Map<String, Object> map, HttpServletRequest request) {
 
-		String word = (String) map.get("word");
-		ArrayList<MarketDTO> list = null;
+		String word = map.get("word") != null ? (String) map.get("word") : "";
 
-		try {
-			list = autoCompleteService.autoComplete(word);
-			System.out.println("검색 성공");
+		ArrayList<MarketDTO> list = new ArrayList<>();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("실패");
+		MarketDTO dto = new MarketDTO("fail");
+
+		if (word.length() >= 2) {
+
+			try {
+				list = autoCompleteService.autoComplete(word);
+				System.out.println("검색 성공");
+
+			} catch (Exception e) {
+				list.add(0, dto);
+				System.out.println("실패");
+
+			}
 		}
+
+		System.out.println(list.get(0).toString());
 
 		return list;
 
