@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- <select id="postView" parameterType="map" resultType="list"> -->
+<mapper namespace="com.example.demo.mapper.AutoCompleteMapper">
+	<select id="autoComplete" resultType="com.example.demo.model.MarketDTO" parameterType="String">
+		select
+		 
+		market_name,
+		geo_info
+		
+		from market_data.market_info 
+		where 
+			market_name like concat('%',#{word},'%')
+			or
+			market_location_a like concat('%',#{word},'%')
+			or
+			market_location_b like concat('%',#{word},'%')
+	  	 
+	</select>
+	
+</mapper>
+
+	<!-- private String market_name;
+	private String market_location_a;
+	private String market_locatiiono_b;
+	private float market_latitude;
+	private float market_longitude;
+	private String market_type;
+	private String market_item;
+	private String geo_info; -->

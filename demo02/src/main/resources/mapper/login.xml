@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- <select id="postView" parameterType="map" resultType="list"> -->
+<mapper namespace="com.example.demo.mapper.LoginMapper">
+	<select id="login" resultType="com.example.demo.model.MemberDTO" parameterType="map">
+		select *
+		
+		from market_data.member_info02 
+		where
+			mem_id = #{mem_id}
+			and
+			mem_pw = #{mem_pw}
+			
+	</select>
+	
+</mapper>
+
+<!-- 
+	private int mem_uid;
+	private LocalDate reg_date;
+	private LocalTime reg_time;
+	private String reg_ip;
+	private String mem_type;
+	private String mem_id;
+	private String mem_pw;
+	private String mem_email;
+	private String mod_pw_1;
+	private String mod_pw_2;
+	private String mod_pw_3;
+	private String mem_name;
+	private String marketing_flag;
+	private String mem_status;
+	private String mem_out_flag;
+	private Date mem_out_date;
+	private Date mem_out_time;
+	private String mem_out_ip;
+	 -->

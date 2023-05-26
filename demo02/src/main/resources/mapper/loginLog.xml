@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- <select id="postView" parameterType="map" resultType="list"> -->
+<mapper namespace="com.example.demo.mapper.LoginLogMapper">
+	<insert id="loginLog" parameterType="com.example.demo.model.LogDTO">
+	
+		insert into market_data.login_log (log_num,id,date,time,ip)
+		
+		values(#{log_num},#{id},#{date},#{time},#{ip})
+	  	 
+	</insert>
+	
+</mapper>
+
+
+
+<!-- 
+	private int log_num;
+	private String id;
+	private LocalDate date;
+	private LocalTime time;
+	private String ip;
+	 -->
