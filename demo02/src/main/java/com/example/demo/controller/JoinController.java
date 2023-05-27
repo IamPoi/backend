@@ -77,18 +77,20 @@ public class JoinController {
 		 */
 
 		String result = "";
+		Map<String, Object> join_result = new HashMap<String, Object>();
 		
 		try {
 			joinService.join(dto);
 			System.out.println("회원가입 성공");
 			result = "success";
+			join_result.put("dto", dto);
 		} catch (Exception e) {
 			System.out.println("회원가입 실패");
 			result = "fail";
 		}
 		
-		Map<String, Object> join_result = new HashMap<String, Object>();
 		join_result.put("result", result);
+		
 		
 		return join_result;
 
