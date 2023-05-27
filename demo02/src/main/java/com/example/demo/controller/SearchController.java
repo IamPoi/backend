@@ -36,13 +36,21 @@ public class SearchController {
 			try {
 
 				searchList = searchService.searchList(word);
-				System.out.println("검색 성공");
+				
+				if(searchList.size() == 0) {
+					searchList.add(dto);
+					System.out.println("리스트 없음");
+				} else {
+					System.out.println("검색 성공");					
+				}
+				
 
 			} catch (Exception e) {
-				e.printStackTrace();
 				System.out.println("실패");
 				searchList.add(dto);
 			}
+		} else {
+			searchList.add(dto);
 		}
 
 		return searchList;

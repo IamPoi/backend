@@ -3,26 +3,19 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 	<!-- <select id="postView" parameterType="map" resultType="list"> -->
-<mapper namespace="com.example.demo.mapper.SearchMapper">
-	<select id="searchList" resultType="com.example.demo.model.MarketDTO" parameterType="String">
-		select
-		 
-		market_name,
-		market_location_a,
-		market_location_b,
-		market_latitude,
-		market_longitude,
-		market_type,
-		market_item,
-		geo_info
-		
+<mapper namespace="com.example.demo.mapper.MarketListMapper">
+	<select id="marketList" resultType="com.example.demo.model.MarketDTO">
+	
+		select 
+			market_name,
+			market_location_a,
+			market_location_b,
+			market_latitude,
+			market_longitude,
+			market_type,
+			market_item,
+			geo_info
 		from market_data.market_info 
-		where 
-			market_name like concat('%',#{word},'%')
-			or
-			market_location_a like concat('%',#{word},'%')
-			or
-			market_location_b like concat('%',#{word},'%')
 	  	 
 	</select>
 	

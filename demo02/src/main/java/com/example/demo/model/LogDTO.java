@@ -65,4 +65,8 @@ public class LogDTO {
 		this.ip = ip;
 	}
 
+	public LogDTO() {
+		super();
+	}
+
 }

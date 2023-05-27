@@ -40,8 +40,8 @@ public class LoginController {
 		System.out.println("로그인 컨트롤러");
 		System.out.println(map.get("mem_id"));
 
-		String mem_id = (String) map.get("mem_id");
-		String mem_pw = (String) map.get("mem_pw");
+		String mem_id = map.get("mem_id") != null ? (String) map.get("mem_id") : "";
+		String mem_pw = map.get("mem_pw") != null ? (String) map.get("mem_pw") : "";
 
 		SHA256 sha256 = new SHA256();
 
@@ -55,18 +55,6 @@ public class LoginController {
 		System.out.println(mem_pw);
 
 		String result = "";
-		
-
-		try {
-			System.out.println("로그인 시도");
-			MemberDTO dto = loginService.login(map);
-			session.setAttribute("user", dto);
-			System.out.println("로그인 성공");
-			result = "success";
-		} catch (Exception e) {
-			System.out.println("로그인 실패");
-			result = "fail";
-		}
 
 		ClientUtils clientUtils = new ClientUtils();
 		DateAndTime dateAndTime = new DateAndTime();
@@ -76,25 +64,36 @@ public class LoginController {
 		String ip = clientUtils.getRemoteIP(request);
 
 		int num = 0;
-		try {
-			num = logNumService.logNum(mem_id);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
 
-		LogDTO log = new LogDTO(num + 1, mem_id, date, time, ip);
+		LogDTO log = new LogDTO();
+
+		try {
+			System.out.println("로그인 시도");
+			MemberDTO dto = loginService.login(map);
+			session.setAttribute("user", dto);
+			System.out.println("로그인 성공");
+			result = "success";
+
+			num = logNumService.logNum(mem_id);
+			log.setLog_num(num + 1);
+			log.setId(mem_id);
+			log.setDate(date);
+			log.setTime(time);
+			log.setIp(ip);
+			loginLogService.loginLog(log);
+
+		} catch (Exception e) {
+			System.out.println("로그인 실패");
+			result = "fail";
+		}
 
 		System.out.println(log.toString());
 
-		try {
-			loginLogService.loginLog(log);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
 		Map<String, Object> login_result = new HashMap<String, Object>();
-		
+
 		login_result.put("result", result);
+
+		System.out.println(map.toString());
 
 		return login_result;
 

@@ -27,8 +27,9 @@ public class LogSearchController {
 
 		try {
 			list = logSearchService.logSearch(id);
+			System.out.println(id+"검색 성공");
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(id+"를 다시 확인해주세요.");
 		}
 
 		return list;
