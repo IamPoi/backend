@@ -25,7 +25,7 @@ import com.google.gson.Gson;
 public class NaverAPI {
 
 	@GetMapping("naverSearch")
-	public Map naverSearch(@RequestParam Map<String, Object> map) {
+	public Map naverSearch(@RequestParam Map<String, Object> map) { 
 
 		String word = map.get("word") != null ? (String) map.get("word") : "";
 
