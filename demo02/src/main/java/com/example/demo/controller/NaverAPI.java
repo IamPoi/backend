@@ -39,7 +39,7 @@ public class NaverAPI {
 		System.out.println(text);
 
 		try {
-			text = URLEncoder.encode("그린팩토리", "UTF-8");
+			text = URLEncoder.encode(text, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			throw new RuntimeException("검색어 인코딩 실패", e);
 		}
@@ -102,16 +102,21 @@ public class NaverAPI {
 	}
 
 	public static String readBody(InputStream body) {
-		InputStreamReader streamReader = new InputStreamReader(body);
-
+		InputStreamReader streamReader;
+		try {
+			streamReader = new InputStreamReader(body, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException("API 응답 인코딩 처리 실패", e);
+		}
+	
 		try (BufferedReader lineReader = new BufferedReader(streamReader)) {
 			StringBuilder responseBody = new StringBuilder();
-
+	
 			String line;
 			while ((line = lineReader.readLine()) != null) {
 				responseBody.append(line);
 			}
-
+	
 			return responseBody.toString();
 		} catch (IOException e) {
 			throw new RuntimeException("API 응답을 읽는 데 실패했습니다.", e);
