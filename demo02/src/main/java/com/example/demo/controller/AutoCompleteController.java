@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,30 +23,30 @@ public class AutoCompleteController {
 	private AutoCompleteService autoCompleteService;
 
 	@GetMapping("autoComplete")
-	public ArrayList<MarketDTO> search(@RequestParam Map<String, Object> map, HttpServletRequest request) {
+	public Map search(@RequestParam Map<String, Object> map, HttpServletRequest request) {
 
 		String word = map.get("word") != null ? (String) map.get("word") : "";
 
 		ArrayList<MarketDTO> list = new ArrayList<>();
 
-		MarketDTO dto = new MarketDTO("fail");
+		Map<String, Object> result = new HashMap<>();
 
 		if (word.length() >= 2) {
 
 			try {
 				list = autoCompleteService.autoComplete(word);
+				result.put("result", "success");
+				result.put("list", list);
 				System.out.println("검색 성공");
 
 			} catch (Exception e) {
-				list.add(0, dto);
+				result.put("result", "fail");
 				System.out.println("실패");
-
+				e.printStackTrace();
 			}
 		}
 
-		System.out.println(list.get(0).toString());
-
-		return list;
+		return result;
 
 	}
 

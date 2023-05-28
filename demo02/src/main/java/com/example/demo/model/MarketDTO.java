@@ -5,139 +5,139 @@ import java.time.LocalTime;
 
 public class MarketDTO {
 
-	private String marketUid;
-	private LocalDate regDate;
-	private LocalTime regTime;
-	private Integer regMemUid;
-	private String regIp;
-	private String marketName;
-	private String marketLocationA;
-	private String marketLocationB;
-	private String marketLatitude;
-	private String marketLongitude;
-	private String marketPeriod;
-	private String marketType;
-	private String marketItem;
-	private Integer marketStore;
+	private String market_uid;
+	private LocalDate reg_date;
+	private LocalTime reg_time;
+	private Integer reg_mem_uid;
+	private String reg_ip;
+	private String market_name;
+	private String market_location_a;
+	private String market_location_b;
+	private String market_latitude;
+	private String market_longitude;
+	private String market_period;
+	private String market_type;
+	private String market_item;
+	private Integer market_store;
 	private String homepage;
-	private String imgLgUrl;
-	private String imgSmUrl;
-	private String geoInfo;
-	private LocalDate modDate;
-	private LocalTime modTime;
-	private Integer modMemUid;
-	private String modIp;
+	private String img_lg_url;
+	private String img_sm_url;
+	private String geo_info;
+	private LocalDate mod_date;
+	private LocalTime mod_time;
+	private Integer mod_mem_uid;
+	private String mod_ip;
 
-	public String getMarketUid() {
-		return marketUid;
+	public String getMarket_uid() {
+		return market_uid;
 	}
 
-	public void setMarketUid(String marketUid) {
-		this.marketUid = marketUid;
+	public void setMarket_uid(String market_uid) {
+		this.market_uid = market_uid;
 	}
 
-	public LocalDate getRegDate() {
-		return regDate;
+	public LocalDate getReg_date() {
+		return reg_date;
 	}
 
-	public void setRegDate(LocalDate regDate) {
-		this.regDate = regDate;
+	public void setReg_date(LocalDate reg_date) {
+		this.reg_date = reg_date;
 	}
 
-	public LocalTime getRegTime() {
-		return regTime;
+	public LocalTime getReg_time() {
+		return reg_time;
 	}
 
-	public void setRegTime(LocalTime regTime) {
-		this.regTime = regTime;
+	public void setReg_time(LocalTime reg_time) {
+		this.reg_time = reg_time;
 	}
 
-	public Integer getRegMemUid() {
-		return regMemUid;
+	public Integer getReg_mem_uid() {
+		return reg_mem_uid;
 	}
 
-	public void setRegMemUid(Integer regMemUid) {
-		this.regMemUid = regMemUid;
+	public void setReg_mem_uid(Integer reg_mem_uid) {
+		this.reg_mem_uid = reg_mem_uid;
 	}
 
-	public String getRegIp() {
-		return regIp;
+	public String getReg_ip() {
+		return reg_ip;
 	}
 
-	public void setRegIp(String regIp) {
-		this.regIp = regIp;
+	public void setReg_ip(String reg_ip) {
+		this.reg_ip = reg_ip;
 	}
 
-	public String getMarketName() {
-		return marketName;
+	public String getMarket_name() {
+		return market_name;
 	}
 
-	public void setMarketName(String marketName) {
-		this.marketName = marketName;
+	public void setMarket_name(String market_name) {
+		this.market_name = market_name;
 	}
 
-	public String getMarketLocationA() {
-		return marketLocationA;
+	public String getMarket_location_a() {
+		return market_location_a;
 	}
 
-	public void setMarketLocationA(String marketLocationA) {
-		this.marketLocationA = marketLocationA;
+	public void setMarket_location_a(String market_location_a) {
+		this.market_location_a = market_location_a;
 	}
 
-	public String getMarketLocationB() {
-		return marketLocationB;
+	public String getMarket_location_b() {
+		return market_location_b;
 	}
 
-	public void setMarketLocationB(String marketLocationB) {
-		this.marketLocationB = marketLocationB;
+	public void setMarket_location_b(String market_location_b) {
+		this.market_location_b = market_location_b;
 	}
 
-	public String getMarketLatitude() {
-		return marketLatitude;
+	public String getMarket_latitude() {
+		return market_latitude;
 	}
 
-	public void setMarketLatitude(String marketLatitude) {
-		this.marketLatitude = marketLatitude;
+	public void setMarket_latitude(String market_latitude) {
+		this.market_latitude = market_latitude;
 	}
 
-	public String getMarketLongitude() {
-		return marketLongitude;
+	public String getMarket_longitude() {
+		return market_longitude;
 	}
 
-	public void setMarketLongitude(String marketLongitude) {
-		this.marketLongitude = marketLongitude;
+	public void setMarket_longitude(String market_longitude) {
+		this.market_longitude = market_longitude;
 	}
 
-	public String getMarketPeriod() {
-		return marketPeriod;
+	public String getMarket_period() {
+		return market_period;
 	}
 
-	public void setMarketPeriod(String marketPeriod) {
-		this.marketPeriod = marketPeriod;
+	public void setMarket_period(String market_period) {
+		this.market_period = market_period;
 	}
 
-	public String getMarketType() {
-		return marketType;
+	public String getMarket_type() {
+		return market_type;
 	}
 
-	public void setMarketType(String marketType) {
-		this.marketType = marketType;
+	public void setMarket_type(String market_type) {
+		this.market_type = market_type;
 	}
 
-	public String getMarketItem() {
-		return marketItem;
+	public String getMarket_item() {
+		return market_item;
 	}
 
-	public void setMarketItem(String marketItem) {
-		this.marketItem = marketItem;
+	public void setMarket_item(String market_item) {
+		this.market_item = market_item;
 	}
 
-	public Integer getMarketStore() {
-		return marketStore;
+	public Integer getMarket_store() {
+		return market_store;
 	}
 
-	public void setMarketStore(Integer marketStore) {
-		this.marketStore = marketStore;
+	public void setMarket_store(Integer market_store) {
+		this.market_store = market_store;
 	}
 
 	public String getHomepage() {
@@ -148,101 +148,94 @@ public class MarketDTO {
 		this.homepage = homepage;
 	}
 
-	public String getImgLgUrl() {
-		return imgLgUrl;
+	public String getImg_lg_url() {
+		return img_lg_url;
 	}
 
-	public void setImgLgUrl(String imgLgUrl) {
-		this.imgLgUrl = imgLgUrl;
+	public void setImg_lg_url(String img_lg_url) {
+		this.img_lg_url = img_lg_url;
 	}
 
-	public String getImgSmUrl() {
-		return imgSmUrl;
+	public String getImg_sm_url() {
+		return img_sm_url;
 	}
 
-	public void setImgSmUrl(String imgSmUrl) {
-		this.imgSmUrl = imgSmUrl;
+	public void setImg_sm_url(String img_sm_url) {
+		this.img_sm_url = img_sm_url;
 	}
 
-	public String getGeoInfo() {
-		return geoInfo;
+	public String getGeo_info() {
+		return geo_info;
 	}
 
-	public void setGeoInfo(String geoInfo) {
-		this.geoInfo = geoInfo;
+	public void setGeo_info(String geo_info) {
+		this.geo_info = geo_info;
 	}
 
-	public LocalDate getModDate() {
-		return modDate;
+	public LocalDate getMod_date() {
+		return mod_date;
 	}
 
-	public void setModDate(LocalDate modDate) {
-		this.modDate = modDate;
+	public void setMod_date(LocalDate mod_date) {
+		this.mod_date = mod_date;
 	}
 
-	public LocalTime getModTime() {
-		return modTime;
+	public LocalTime getMod_time() {
+		return mod_time;
 	}
 
-	public void setModTime(LocalTime modTime) {
-		this.modTime = modTime;
+	public void setMod_time(LocalTime mod_time) {
+		this.mod_time = mod_time;
 	}
 
-	public Integer getModMemUid() {
-		return modMemUid;
+	public Integer getMod_mem_uid() {
+		return mod_mem_uid;
 	}
 
-	public void setModMemUid(Integer modMemUid) {
-		this.modMemUid = modMemUid;
+	public void setMod_mem_uid(Integer mod_mem_uid) {
+		this.mod_mem_uid = mod_mem_uid;
 	}
 
-	public String getModIp() {
-		return modIp;
+	public String getMod_ip() {
+		return mod_ip;
 	}
 
-	public void setModIp(String modIp) {
-		this.modIp = modIp;
+	public void setMod_ip(String mod_ip) {
+		this.mod_ip = mod_ip;
 	}
 
-	public MarketDTO(String marketUid, LocalDate regDate, LocalTime regTime, Integer regMemUid, String regIp,
-			String marketName, String marketLocationA, String marketLocationB, String marketLatitude,
-			String marketLongitude, String marketPeriod, String marketType, String marketItem, Integer marketStore,
-			String homepage, String imgLgUrl, String imgSmUrl, String geoInfo, LocalDate modDate, LocalTime modTime,
-			Integer modMemUid, String modIp) {
+	public MarketDTO(String market_uid, LocalDate reg_date, LocalTime reg_time, Integer reg_mem_uid, String reg_ip,
+			String market_name, String market_location_a, String market_location_b, String market_latitude,
+			String market_longitude, String market_period, String market_type, String market_item, Integer market_store,
+			String homepage, String img_lg_url, String img_sm_url, String geo_info, LocalDate mod_date,
+			LocalTime mod_time, Integer mod_mem_uid, String mod_ip) {
 		super();
-		this.marketUid = marketUid;
-		this.regDate = regDate;
-		this.regTime = regTime;
-		this.regMemUid = regMemUid;
-		this.regIp = regIp;
-		this.marketName = marketName;
-		this.marketLocationA = marketLocationA;
-		this.marketLocationB = marketLocationB;
-		this.marketLatitude = marketLatitude;
-		this.marketLongitude = marketLongitude;
-		this.marketPeriod = marketPeriod;
-		this.marketType = marketType;
-		this.marketItem = marketItem;
-		this.marketStore = marketStore;
+		this.market_uid = market_uid;
+		this.reg_date = reg_date;
+		this.reg_time = reg_time;
+		this.reg_mem_uid = reg_mem_uid;
+		this.reg_ip = reg_ip;
+		this.market_name = market_name;
+		this.market_location_a = market_location_a;
+		this.market_location_b = market_location_b;
+		this.market_latitude = market_latitude;
+		this.market_longitude = market_longitude;
+		this.market_period = market_period;
+		this.market_type = market_type;
+		this.market_item = market_item;
+		this.market_store = market_store;
 		this.homepage = homepage;
-		this.imgLgUrl = imgLgUrl;
-		this.imgSmUrl = imgSmUrl;
-		this.geoInfo = geoInfo;
-		this.modDate = modDate;
-		this.modTime = modTime;
-		this.modMemUid = modMemUid;
-		this.modIp = modIp;
+		this.img_lg_url = img_lg_url;
+		this.img_sm_url = img_sm_url;
+		this.geo_info = geo_info;
+		this.mod_date = mod_date;
+		this.mod_time = mod_time;
+		this.mod_mem_uid = mod_mem_uid;
+		this.mod_ip = mod_ip;
 	}
 
-	@Override
-	public String toString() {
-		return "MarketDTO [marketUid=" + marketUid + ", regDate=" + regDate + ", regTime=" + regTime + ", regMemUid="
-				+ regMemUid + ", regIp=" + regIp + ", marketName=" + marketName + ", marketLocationA=" + marketLocationA
-				+ ", marketLocationB=" + marketLocationB + ", marketLatitude=" + marketLatitude + ", marketLongitude="
-				+ marketLongitude + ", marketPeriod=" + marketPeriod + ", marketType=" + marketType + ", marketItem="
-				+ marketItem + ", marketStore=" + marketStore + ", homepage=" + homepage + ", imgLgUrl=" + imgLgUrl
-				+ ", imgSmUrl=" + imgSmUrl + ", geoInfo=" + geoInfo + ", modDate=" + modDate + ", modTime=" + modTime
-				+ ", modMemUid=" + modMemUid + ", modIp=" + modIp + "]";
+	public MarketDTO() {
+		super();
 	}
 
 }

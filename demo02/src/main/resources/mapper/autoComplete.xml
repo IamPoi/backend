@@ -5,12 +5,7 @@
 	<!-- <select id="postView" parameterType="map" resultType="list"> -->
 <mapper namespace="com.example.demo.mapper.AutoCompleteMapper">
 	<select id="autoComplete" resultType="com.example.demo.model.MarketDTO" parameterType="String">
-		select
-		
-		market_name,
-		market_location_a,
-		market_location_b,
-		geo_info
+		select *
 		
 		from market_data.market_info 
 		where 
