@@ -8,6 +8,7 @@
 	
 		select *
 		from market_data.market_info 
+		
 	  	 
 	</select>
 	

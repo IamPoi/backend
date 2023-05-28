@@ -13,6 +13,7 @@
 			market_location_a like concat('%',#{word},'%')
 			or
 			market_location_b like concat('%',#{word},'%')
+			
 	  	 
 	</select>
 	

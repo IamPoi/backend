@@ -12,6 +12,7 @@
 			and
 			mem_email = #{mem_email}
 	  	 
+	  	 
 	</select>
 	
 </mapper>
