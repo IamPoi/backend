@@ -13,8 +13,8 @@ public class MarketDTO {
 	private String market_name;
 	private String market_location_a;
 	private String market_location_b;
-	private String market_latitude;
-	private String market_longitude;
+	private String latitude;
+	private String longitude;
 	private String market_period;
 	private String market_type;
 	private String market_item;
@@ -92,20 +92,20 @@ public class MarketDTO {
 		this.market_location_b = market_location_b;
 	}
 
-	public String getMarket_latitude() {
-		return market_latitude;
+	public String getLatitude() {
+		return latitude;
 	}
 
-	public void setMarket_latitude(String market_latitude) {
-		this.market_latitude = market_latitude;
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
 	}
 
-	public String getMarket_longitude() {
-		return market_longitude;
+	public String getLongitude() {
+		return longitude;
 	}
 
-	public void setMarket_longitude(String market_longitude) {
-		this.market_longitude = market_longitude;
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
 	public String getMarket_period() {
@@ -205,10 +205,10 @@ public class MarketDTO {
 	}
 
 	public MarketDTO(String market_uid, LocalDate reg_date, LocalTime reg_time, Integer reg_mem_uid, String reg_ip,
-			String market_name, String market_location_a, String market_location_b, String market_latitude,
-			String market_longitude, String market_period, String market_type, String market_item, Integer market_store,
-			String homepage, String img_lg_url, String img_sm_url, String geo_info, LocalDate mod_date,
-			LocalTime mod_time, Integer mod_mem_uid, String mod_ip) {
+			String market_name, String market_location_a, String market_location_b, String latitude, String longitude,
+			String market_period, String market_type, String market_item, Integer market_store, String homepage,
+			String img_lg_url, String img_sm_url, String geo_info, LocalDate mod_date, LocalTime mod_time,
+			Integer mod_mem_uid, String mod_ip) {
 		super();
 		this.market_uid = market_uid;
 		this.reg_date = reg_date;
@@ -218,8 +218,8 @@ public class MarketDTO {
 		this.market_name = market_name;
 		this.market_location_a = market_location_a;
 		this.market_location_b = market_location_b;
-		this.market_latitude = market_latitude;
-		this.market_longitude = market_longitude;
+		this.latitude = latitude;
+		this.longitude = longitude;
 		this.market_period = market_period;
 		this.market_type = market_type;
 		this.market_item = market_item;
@@ -236,6 +236,18 @@ public class MarketDTO {
 
 	public MarketDTO() {
 		super();
+	}
+
+	@Override
+	public String toString() {
+		return "MarketDTO [market_uid=" + market_uid + ", reg_date=" + reg_date + ", reg_time=" + reg_time
+				+ ", reg_mem_uid=" + reg_mem_uid + ", reg_ip=" + reg_ip + ", market_name=" + market_name
+				+ ", market_location_a=" + market_location_a + ", market_location_b=" + market_location_b
+				+ ", latitude=" + latitude + ", longitude=" + longitude + ", market_period=" + market_period
+				+ ", market_type=" + market_type + ", market_item=" + market_item + ", market_store=" + market_store
+				+ ", homepage=" + homepage + ", img_lg_url=" + img_lg_url + ", img_sm_url=" + img_sm_url + ", geo_info="
+				+ geo_info + ", mod_date=" + mod_date + ", mod_time=" + mod_time + ", mod_mem_uid=" + mod_mem_uid
+				+ ", mod_ip=" + mod_ip + "]";
 	}
 
 }

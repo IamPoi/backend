@@ -63,6 +63,8 @@ public class NaverAPI {
 		Map<String, Object> result = gson.fromJson(responseBody, Map.class);
 
 		System.out.println(result);
+		
+		
 
 		return result;
 	}

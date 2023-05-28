@@ -4,8 +4,8 @@ public class GeoDTO {
 
 	private int geo_uid;
 	private String geo_name;
-	private String geo_latitude;
-	private String geo_longitude;
+	private String latitude;
+	private String longitude;
 	private int geo_code;
 
 	public int getGeo_uid() {
@@ -24,20 +24,20 @@ public class GeoDTO {
 		this.geo_name = geo_name;
 	}
 
-	public String getGeo_latitude() {
-		return geo_latitude;
+	public String getLatitude() {
+		return latitude;
 	}
 
-	public void setGeo_latitude(String geo_latitude) {
-		this.geo_latitude = geo_latitude;
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
 	}
 
-	public String getGeo_longitude() {
-		return geo_longitude;
+	public String getLongitude() {
+		return longitude;
 	}
 
-	public void setGeo_longitude(String geo_longitude) {
-		this.geo_longitude = geo_longitude;
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
 	public int getGeo_code() {
@@ -48,19 +48,19 @@ public class GeoDTO {
 		this.geo_code = geo_code;
 	}
 
-	public GeoDTO(int geo_uid, String geo_name, String geo_latitude, String geo_longitude, int geo_code) {
+	public GeoDTO(int geo_uid, String geo_name, String latitude, String longitude, int geo_code) {
 		super();
 		this.geo_uid = geo_uid;
 		this.geo_name = geo_name;
-		this.geo_latitude = geo_latitude;
-		this.geo_longitude = geo_longitude;
+		this.latitude = latitude;
+		this.longitude = longitude;
 		this.geo_code = geo_code;
 	}
 
 	@Override
 	public String toString() {
-		return "GeoDTO [geo_uid=" + geo_uid + ", geo_name=" + geo_name + ", geo_latitude=" + geo_latitude
-				+ ", geo_longitude=" + geo_longitude + ", geo_code=" + geo_code + "]";
+		return "GeoDTO [geo_uid=" + geo_uid + ", geo_name=" + geo_name + ", latitude=" + latitude + ", longitude="
+				+ longitude + ", geo_code=" + geo_code + "]";
 	}
 
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- <select id="postView" parameterType="map" resultType="list"> -->
+<mapper namespace="com.example.demo.mapper.DuplicateIdMapper">
+	<select id="duplicateId" resultType="com.example.demo.model.MemberDTO" parameterType="map">
+	
+		select *
+		from market_data.member_info02
+		where 
+			mem_id = #{mem_id}
+			or
+			mem_email = #{mem_email}		
+	  	 
+	</select>
+	
+</mapper>
+
+	<!-- private String market_name;
+	private String market_location_a;
+	private String market_location_b;
+	private float market_latitude;
+	private float market_longitude;
+	private String market_type;
+	private String market_item;
+	private String geo_info; -->
