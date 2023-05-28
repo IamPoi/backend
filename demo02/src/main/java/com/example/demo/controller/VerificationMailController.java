@@ -17,7 +17,6 @@ public class VerificationMailController {
 	@Autowired
 	private EmailService emailService;
 
-//
 	@Autowired
 	public VerificationMailController(EmailService emailService) {
 		this.emailService = emailService;
