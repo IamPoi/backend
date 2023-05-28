@@ -11,11 +11,6 @@ public class LogDTO {
 	private LocalTime time;
 	private String ip;
 
-	@Override
-	public String toString() {
-		return "LogDTO [log_num=" + log_num + ", id=" + id + ", date=" + date + ", time=" + time + ", ip=" + ip + "]";
-	}
-
 	public int getLog_num() {
 		return log_num;
 	}
@@ -56,17 +51,9 @@ public class LogDTO {
 		this.ip = ip;
 	}
 
-	public LogDTO(int log_num, String id, LocalDate date, LocalTime time, String ip) {
-		super();
-		this.log_num = log_num;
-		this.id = id;
-		this.date = date;
-		this.time = time;
-		this.ip = ip;
-	}
-
-	public LogDTO() {
-		super();
+	@Override
+	public String toString() {
+		return "LogDTO [log_num=" + log_num + ", id=" + id + ", date=" + date + ", time=" + time + ", ip=" + ip + "]";
 	}
 
 }

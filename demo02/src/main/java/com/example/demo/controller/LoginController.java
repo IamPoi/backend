@@ -74,7 +74,15 @@ public class LoginController {
 			System.out.println("로그인 성공");
 			result = "success";
 
-			num = logNumService.logNum(mem_id);
+			try {
+
+				num = logNumService.logNum(mem_id);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+
+			}
+
 			log.setLog_num(num + 1);
 			log.setId(mem_id);
 			log.setDate(date);
