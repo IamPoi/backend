@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- <select id="postView" parameterType="map" resultType="list"> -->
+<mapper namespace="com.example.demo.mapper.FindIdMapper">
+	<select id="findId" resultType="com.example.demo.model.MemberDTO" parameterType="map">
+		select mem_id
+		from market_data.member_info02 
+		where 
+			mem_name = #{mem_name}
+			and
+			mem_email = #{mem_email}
+	  	 
+	</select>
+	
+</mapper>
+
+	

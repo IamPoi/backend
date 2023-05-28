@@ -208,4 +208,9 @@ public class MemberDTO {
 		this.mem_out_ip = mem_out_ip;
 	}
 
+	public MemberDTO(String mem_id) {
+		super();
+		this.mem_id = mem_id;
+	}
+
 }

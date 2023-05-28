@@ -6,9 +6,9 @@
 <mapper namespace="com.example.demo.mapper.JoinMapper">
 	<insert id="join" parameterType="com.example.demo.model.MemberDTO">
 	
-		insert into market_data.member_info02 (mem_id,mem_pw,mem_email,reg_date,reg_time,reg_ip,marketing_flag,mem_status)
+		insert into market_data.member_info02 (mem_id,mem_pw,mem_email,reg_date,reg_time,reg_ip,marketing_flag,mem_status,mem_name)
 		
-		values(#{mem_id},#{mem_pw},#{mem_email},#{reg_date},#{reg_time},#{reg_ip},#{marketing_flag},#{mem_status})
+		values(#{mem_id},#{mem_pw},#{mem_email},#{reg_date},#{reg_time},#{reg_ip},#{marketing_flag},#{mem_status},#{mem_name})
 	  	 
 	</insert>
 	

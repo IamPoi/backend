@@ -6,6 +6,18 @@ mybatis:
   
 
 spring:
+#  mail:
+#    host: smtp.gmail.com
+#    port: 587
+#    username: ourmarket275@gmail.com  # 앱 비밀번호를 발급 받은 구글 아이디
+#    password: vflptrwkfptijqhl
+#    properties:
+#      mail:
+#        smtp:
+#          starttls:
+#            enable: true
+#          auth: true
+
   datasource:
   
 # project
@@ -43,7 +55,7 @@ server:
       force: true
 
 
-  
+
   
   
   

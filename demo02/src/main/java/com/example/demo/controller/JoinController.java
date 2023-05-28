@@ -37,6 +37,7 @@ public class JoinController {
 		String mem_email = (String) map.get("mem_email");
 		String marketing_flag = (String) map.get("marketing_flag");
 		String mem_status = (String) map.get("mem_status");
+		String mem_name = (String) map.get("mem_name");
 
 		MemberDTO dto = new MemberDTO();
 
@@ -67,18 +68,11 @@ public class JoinController {
 		dto.setMem_email(mem_email);
 		dto.setMarketing_flag(marketing_flag);
 		dto.setMem_status(mem_status);
-
-		/*
-		 * System.out.println(dto.getMem_id()); System.out.println(dto.getMem_pw());
-		 * System.out.println(dto.getReg_date()); System.out.println(dto.getReg_time());
-		 * System.out.println(dto.getReg_ip()); System.out.println(dto.getMem_email());
-		 * System.out.println(dto.getMarketing_flag());
-		 * System.out.println(dto.getMem_status());
-		 */
+		dto.setMem_name(mem_name);
 
 		String result = "";
 		Map<String, Object> join_result = new HashMap<String, Object>();
-		
+
 		try {
 			joinService.join(dto);
 			System.out.println("회원가입 성공");
@@ -88,10 +82,9 @@ public class JoinController {
 			System.out.println("회원가입 실패");
 			result = "fail";
 		}
-		
+
 		join_result.put("result", result);
-		
-		
+
 		return join_result;
 
 	}

@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,7 +22,7 @@ public class SearchController {
 
 	@GetMapping("search")
 //	public String search(@RequestParam Map<String, Object> map, Model model) {
-	public Map search(@RequestParam Map<String, Object> map, Model model) {
+	public Map search(@RequestParam Map<String, Object> map) {
 
 		Map<String, Object> result = new HashMap<>();
 
