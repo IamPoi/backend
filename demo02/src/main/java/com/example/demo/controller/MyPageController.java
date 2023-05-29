@@ -20,8 +20,6 @@ public class MyPageController {
 	public Map myPage(HttpSession session) {
 
 		Map<String, Object> map = new HashMap<>();
-		
-		SendMail sendMail = new SendMail();
 
 		try {
 
@@ -29,8 +27,6 @@ public class MyPageController {
 
 			map.put("result", "success");
 			map.put("user", dto);
-			
-			sendMail.send(dto.getMem_email());
 
 		} catch (Exception e) {
 			e.printStackTrace();
