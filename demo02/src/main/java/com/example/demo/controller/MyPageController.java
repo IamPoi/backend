@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.MemberDTO;
-import com.example.demo.service.SendMail;
 
 import jakarta.servlet.http.HttpSession;
 
