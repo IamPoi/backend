@@ -25,14 +25,11 @@ public class VerificationMailController {
 	@GetMapping("verification")
 	public Map verification(@RequestParam Map<String, Object> map) {
 
-		Map<String, Object> result = new HashMap<>();
-
-		Random random = new Random();
+		Map<String, Object> result = new HashMap<>();		
 
 		String to = (String) map.get("email");
-		String numbers = String.valueOf((random.nextInt(900000) + 100000));
-
-		emailService.sendEmail(to, "OurMarket275 인증 메일", numbers);
+		
+		String numbers = emailService.sendEmail(to);
 
 		result.put("numbers", numbers);
 

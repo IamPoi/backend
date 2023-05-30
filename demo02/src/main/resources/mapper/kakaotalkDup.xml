@@ -2,26 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-	<!-- <select id="postView" parameterType="map" resultType="list"> -->
+
 <mapper namespace="com.example.demo.mapper.KakaotalkDuplicateMapper">
 	<select id="dup" resultType="com.example.demo.model.KakaotalkDTO" parameterType="com.example.demo.model.KakaotalkDTO">
 	
 		select *
-		from market_data.kakao_member
+		from market_data.kakao_member02
 		where 
-			id = #{id}
+			mem_id = #{mem_id}
 			or
-			email = #{email}
+			mem_email = #{mem_email}
 	  	 
 	</select>
 	
 </mapper>
 
-	<!-- private String market_name;
-	private String market_location_a;
-	private String market_location_b;
-	private float market_latitude;
-	private float market_longitude;
-	private String market_type;
-	private String market_item;
-	private String geo_info; -->
+	<!-- 
+	private int uid;
+	private Long mem_id;
+	private String mem_email;
+	private String mem_name;
+	private LocalDate reg_date;
+	private LocalTime reg_time;
+	private String reg_ip;
+	private String mem_type;
+	private String marketing_flag;
+	 -->
+	
+ 	
+ 	
+ 	

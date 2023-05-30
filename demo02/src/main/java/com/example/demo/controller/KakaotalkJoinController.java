@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +18,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping("/")
 public class KakaotalkJoinController {
@@ -26,7 +30,7 @@ public class KakaotalkJoinController {
 	@PostMapping("kakaotalkJoin")
 //	@PostMapping("kakaotalk")
 
-	public Map kakatalkJoin(@RequestBody String kakaojson) throws JsonMappingException, JsonProcessingException {
+	public Map kakatalkJoin(@RequestBody String kakaojson, HttpServletRequest request) throws JsonMappingException, JsonProcessingException {
 
 		ObjectMapper mapper = new ObjectMapper();
 
@@ -38,11 +42,19 @@ public class KakaotalkJoinController {
 
 		JsonNode rootNode = mapper.readTree(kakaojson);
 
-		String nickname = (String) properties.get("nickname");
-		String email = (String) kakao_account.get("email");
-		long id = rootNode.path("id").asLong();
+		String mem_name = (String) properties.get("nickname");
+		String mem_email = (String) kakao_account.get("email");
+		long mem_id = rootNode.path("id").asLong();
 
-		KakaotalkDTO dto = new KakaotalkDTO(id, email, nickname);
+		
+		ClientUtils clientUtils = new ClientUtils();
+		String ip = clientUtils.getRemoteIP(request);
+		
+		DateAndTime dateAndTime = new DateAndTime();
+		LocalDate nowDate = dateAndTime.nowDate();
+		LocalTime nowTime = dateAndTime.nowTime();
+		
+		KakaotalkDTO dto = new KakaotalkDTO(0, mem_id, mem_email, mem_name, nowDate, nowTime, ip, null, null);
 
 		Map<String, Object> result = new HashMap<String, Object>();
 

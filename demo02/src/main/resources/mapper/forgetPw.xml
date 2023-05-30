@@ -3,13 +3,15 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 	<!-- <select id="postView" parameterType="map" resultType="list"> -->
-<mapper namespace="com.example.demo.mapper.FindIdMapper">
-	<select id="findId" resultType="com.example.demo.model.MemberDTO" parameterType="map">
+<mapper namespace="com.example.demo.mapper.ForgetPwMapper">
+	<select id="forgetPw" resultType="com.example.demo.model.MemberDTO" parameterType="map">
 	
-		select mem_id
+		select *
 		from market_data.member_info02 
 		where 
 			mem_email = #{mem_email}
+			and
+			mem_id = #{mem_id}
 	  	 
 	  	 
 	</select>

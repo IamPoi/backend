@@ -37,16 +37,21 @@ public class KakaotalkDuplicateController {
 		Map<String, Object> kakao_account = (Map) jsonMap.get("kakao_account");
 
 		JsonNode rootNode = mapper.readTree(kakaojson);
+		
+		String mem_name = (String) properties.get("nickname");
+		String mem_email = (String) kakao_account.get("email");
+		long mem_id = rootNode.path("id").asLong();
 
-		String nickname = (String) properties.get("nickname");
-		String email = (String) kakao_account.get("email");
-		long id = rootNode.path("id").asLong();
-
-		KakaotalkDTO dto = new KakaotalkDTO(id, email, nickname);
+		KakaotalkDTO dto = new KakaotalkDTO(mem_id, mem_email);
+		
 
 		try {
-			if (kakaotalkDuplicateService.dup(dto) != null) {
+			KakaotalkDTO dto_result = kakaotalkDuplicateService.dup(dto);
+			if (dto_result != null) {
 				result.put("result", "duplicate");
+				result.put("mem_id", dto_result.getMem_id());
+				result.put("mem_email", dto_result.getMem_email());
+
 			} else {
 				result.put("result", "none");
 			}
