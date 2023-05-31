@@ -7,7 +7,7 @@
 	<select id="geoList" resultType="com.example.demo.model.GeoDTO">
 	
 		select *
-		from market_data.geo_info 
+		from market.geo_info 
 		
 	  	 
 	</select>

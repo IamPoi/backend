@@ -7,7 +7,7 @@
 	<select id="marketList" resultType="com.example.demo.model.MarketDTO">
 	
 		select *
-		from market_data.market_info 
+		from market.market_info 
 		
 	  	 
 	</select>

@@ -8,7 +8,7 @@
 	
 	
 	
-		UPDATE market_data.member_info02
+		UPDATE market.member_info02
 		SET 
 			mod_pw_3 = mod_pw_2,
 			mod_pw_2 = mod_pw_1,

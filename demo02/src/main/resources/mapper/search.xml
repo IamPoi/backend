@@ -6,7 +6,7 @@
 <mapper namespace="com.example.demo.mapper.SearchMapper">
 	<select id="searchList" resultType="com.example.demo.model.MarketDTO" parameterType="String">
 		select *
-		from market_data.market_info 
+		from market.market_info 
 		where 
 			market_name like concat('%',#{word},'%')
 			or

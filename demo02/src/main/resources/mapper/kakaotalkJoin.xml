@@ -5,7 +5,7 @@
 <mapper namespace="com.example.demo.mapper.KakaotalkJoinMapper">
 	<insert id="kakatalkJoin" parameterType="com.example.demo.model.KakaotalkDTO">
 	
-		insert into market_data.kakao_member02(mem_id,mem_email,mem_name,reg_date,reg_time,reg_ip)
+		insert into market.kakao_member02(mem_id,mem_email,mem_name,reg_date,reg_time,reg_ip)
 		
 		values(#{mem_id},#{mem_email},#{mem_name},#{reg_date},#{reg_time},#{reg_ip})
 	  	 

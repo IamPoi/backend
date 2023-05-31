@@ -6,7 +6,7 @@
 	<select id="logNum" resultType="int" parameterType="String">
 		select log_num
 		
-		from market_data.login_log 
+		from market.login_log 
 		where 
 			id = #{mem_id}
 		order by log_num desc

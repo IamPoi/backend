@@ -7,7 +7,7 @@
 	<select id="dup" resultType="com.example.demo.model.KakaotalkDTO" parameterType="com.example.demo.model.KakaotalkDTO">
 	
 		select *
-		from market_data.kakao_member02
+		from market.kakao_member02
 		where 
 			mem_id = #{mem_id}
 			or

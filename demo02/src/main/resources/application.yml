@@ -21,7 +21,7 @@ spring:
   datasource:
   
 # project
-    url: jdbc:mysql://43.201.186.140?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://43.201.245.48?useUnicode=true&characterEncoding=utf-8
     username: root
     password: 8071
     driver-class-name: com.mysql.cj.jdbc.Driver

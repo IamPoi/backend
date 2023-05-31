@@ -7,7 +7,7 @@
 	<select id="logSearch" resultType="com.example.demo.model.LogDTO" parameterType="String">
 		select *
 		
-		from market_data.login_log
+		from market.login_log
 		where 
 			id = #{id}
 	  	 

@@ -7,7 +7,7 @@
 	<select id="forgetPw" resultType="com.example.demo.model.MemberDTO" parameterType="map">
 	
 		select *
-		from market_data.member_info02 
+		from market.member_info02 
 		where 
 			mem_email = #{mem_email}
 			and
